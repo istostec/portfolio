@@ -392,3 +392,11 @@ def delete_service(item_id: int) -> bool:
     with transaction() as db_cursor:
         db_cursor.execute("DELETE FROM services WHERE id = %s", (item_id,))
         return db_cursor.rowcount > 0
+
+
+def count_users() -> int:
+    with cursor() as db_cursor:
+        db_cursor.execute("SELECT COUNT(*) as count FROM admins")
+        row = db_cursor.fetchone()
+        return row["count"] if row else 0
+
