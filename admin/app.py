@@ -120,12 +120,35 @@ def save_upload(file_storage) -> str:
         flash("Image must be PNG, JPG, JPEG, WEBP, or GIF.", "error")
         return ""
     filename = secure_filename(file_storage.filename)
-    unique_name = f"{uuid.uuid4().hex[:10]}-{filename}"
-    try:
-        file_storage.save(UPLOAD_DIR / unique_name)
-    except OSError:
-        flash("Image could not be saved right now. The project was saved without an image.", "error")
-        return ""
+    ext = filename.rsplit(".", 1)[1].lower() if "." in filename else ""
+    
+    if ext in {"png", "jpg", "jpeg", "webp"}:
+        unique_name = f"{uuid.uuid4().hex[:10]}-{filename.rsplit('.', 1)[0]}.webp"
+        target_path = UPLOAD_DIR / unique_name
+        try:
+            from PIL import Image
+            img = Image.open(file_storage)
+            img.thumbnail((1200, 1200))
+            img.save(target_path, "WEBP", quality=80, optimize=True)
+        except ImportError:
+            unique_name = f"{uuid.uuid4().hex[:10]}-{filename}"
+            target_path = UPLOAD_DIR / unique_name
+            file_storage.seek(0)
+            file_storage.save(target_path)
+        except Exception as e:
+            flash(f"Image optimization failed: {e}. Saved original.", "error")
+            unique_name = f"{uuid.uuid4().hex[:10]}-{filename}"
+            target_path = UPLOAD_DIR / unique_name
+            file_storage.seek(0)
+            file_storage.save(target_path)
+    else:
+        unique_name = f"{uuid.uuid4().hex[:10]}-{filename}"
+        target_path = UPLOAD_DIR / unique_name
+        try:
+            file_storage.save(target_path)
+        except OSError:
+            flash("Image could not be saved right now. The project was saved without an image.", "error")
+            return ""
     return unique_name
 
 
@@ -621,14 +644,22 @@ def dashboard():
     reviews = repository.list_reviews()
     contacts = repository.list_contacts()
     services = repository.list_services()
+    users_count = repository.count_users()
     stats = {
         "projects": len(projects),
         "services": len(services),
         "reviews": len(reviews),
         "contacts": len(contacts),
         "new_contacts": len([contact for contact in contacts if contact.get("status") == "New"]),
+        "users": users_count,
     }
-    return render_template("dashboard.html", stats=stats, recent_contacts=contacts[:5])
+    return render_template(
+        "dashboard.html",
+        stats=stats,
+        recent_contacts=contacts[:5],
+        recent_projects=projects[:5],
+        recent_services=services[:5]
+    )
 
 
 @app.route("/admin/projects", methods=["GET", "POST"])
