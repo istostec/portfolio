@@ -160,7 +160,7 @@ def public_project(project: dict[str, Any]) -> dict[str, Any]:
         "title": project.get("title", ""),
         "category": project.get("category", ""),
         "description": project.get("description", ""),
-        "tech": project.get("tech", ""),
+        "tech": project.get("technologies") or project.get("tech", ""),
         "status": project.get("status", "Published"),
         "created_at": project.get("created_at", ""),
         "image_url": url_for("static", filename=f"uploads/{image}", _external=True) if image else "",
@@ -663,18 +663,21 @@ def admin_services():
             "description": request.form.get("description", "").strip(),
             "icon": request.form.get("icon", "").strip(),
         }
+
         errors = validate_service(data)
+
         if errors:
             flash("Service title and description are required.", "error")
         else:
             repository.create_service(data)
             flash("Service added successfully.", "success")
+
         return redirect(url_for("admin_services"))
 
-   return render_template(
-    "admin/services.html",
-    services=repository.list_services()
-)
+    return render_template(
+        "admin/services.html",
+        services=repository.list_services()
+    )
 
 @app.route("/admin/services/<item_id>/delete", methods=["POST"])
 @login_required
@@ -710,24 +713,31 @@ def edit_admin_service(item_id: str):
 @login_required
 def edit_project(item_id: str):
     project_id = parse_id(item_id)
+
     if project_id is None:
         return redirect(url_for("projects"))
 
     uploaded_image = request.files.get("image")
+
     data = {
         "title": request.form.get("title", "").strip(),
         "category": request.form.get("category", "").strip(),
         "description": request.form.get("description", "").strip(),
         "technologies": request.form.get("tech", "").strip(),
         "status": request.form.get("status", "Draft"),
-        "image": save_upload(uploaded_image) if uploaded_image and uploaded_image.filename else None,
     }
+
+    if uploaded_image and uploaded_image.filename:
+        data["image"] = save_upload(uploaded_image)
+
     errors = validate_project(data)
+
     if errors:
         flash("Project title, category, and description are required.", "error")
     else:
         repository.update_project(project_id, data)
         flash("Project updated successfully.", "success")
+
     return redirect(url_for("projects"))
 
 
