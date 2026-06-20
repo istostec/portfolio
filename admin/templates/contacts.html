@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% set active = "contacts" %}
+{% set heading = "Contact Leads" %}
+{% set eyebrow = "Manage inquiries" %}
+{% block content %}
+<section class="panel">
+    <span class="kicker">Add Contact Manually</span>
+    <form class="admin-form" method="post">
+        <div class="form-grid">
+            <label>Name<input name="name" placeholder="Client name" required></label>
+            <label>Email<input type="email" name="email" placeholder="client@email.com" required></label>
+            <label>Phone<input name="phone" placeholder="+91 XXXXX XXXXX"></label>
+            <label>Service
+                <select name="service">
+                    <option value="">Select service...</option>
+                    <option>Web Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Mobile App Development</option>
+                    <option>AI Automation</option>
+                    <option>Database Management</option>
+                    <option>Domain & Hosting Solutions</option>
+                    <option>Cloud Deployment</option>
+                    <option>Maintenance & Support</option>
+                    <option>SEO Optimization</option>
+                    <option>E-Commerce Solutions</option>
+                    <option>Social Media Management</option>
+                </select>
+            </label>
+        </div>
+        <label>Message<textarea name="message" placeholder="Project message..." required></textarea></label>
+        <button type="submit">Add Contact</button>
+    </form>
+</section>
+
+<section class="contact-list">
+    {% for contact in contacts %}
+    <article class="contact-card">
+        <div class="contact-main">
+            <span class="status">{{ contact.status }}</span>
+            <h3>{{ contact.name }}</h3>
+            <p>{{ contact.message }}</p>
+            <div class="contact-meta">
+                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a>
+                <span>{{ contact.service }}</span>
+                <span>{{ contact.created_at }}</span>
+            </div>
+        </div>
+        <div class="contact-actions">
+            <form method="post" action="{{ url_for('update_contact_status', item_id=contact.id) }}">
+                <select name="status">
+                    <option {{ "selected" if contact.status == "New" else "" }}>New</option>
+                    <option {{ "selected" if contact.status == "Contacted" else "" }}>Contacted</option>
+                    <option {{ "selected" if contact.status == "Closed" else "" }}>Closed</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+            <form method="post" action="{{ url_for('delete_contact', item_id=contact.id) }}">
+                <button class="danger" type="submit">Delete</button>
+            </form>
+        </div>
+    </article>
+    {% else %}
+    <div class="panel">No contacts yet.</div>
+    {% endfor %}
+</section>
+{% endblock %}

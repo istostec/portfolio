@@ -1,0 +1,125 @@
+{
+  "projects": [
+    {
+      "id": "sample-project",
+      "title": "Business Website",
+      "category": "Web Development",
+      "description": "Responsive company website with service pages, contact flow, and modern UI.",
+      "tech": "HTML, CSS, JavaScript",
+      "status": "Published",
+      "image": "",
+      "created_at": "2026-06-05 00:00"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "sample-review",
+      "client": "Demo Client",
+      "role": "Business Owner",
+      "rating": 5,
+      "message": "ISTOS TECH delivered a clean and professional website experience.",
+      "status": "Visible",
+      "created_at": "2026-06-05 00:00"
+    },
+    {
+      "id": "276cdc1458b741edb10762a21775d596",
+      "client": "jay",
+      "role": "founder",
+      "rating": 5,
+      "message": "very good extra o\r\ndinary",
+      "status": "Visible",
+      "created_at": "2026-06-05 16:22"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "sample-contact",
+      "name": "Rahul Sharma",
+      "email": "rahul@example.com",
+      "phone": "+91 XXXXX XXXXX",
+      "service": "Web Development",
+      "message": "I want to build a modern business website.",
+      "status": "New",
+      "created_at": "2026-06-05 00:00"
+    }
+  ],
+  "services": [
+    {
+      "id": "service-web-development",
+      "title": "Web Development",
+      "description": "Premium websites, landing pages, portfolios, and custom web apps with fast loading, clean structure, and responsive polish.",
+      "icon": "WD",
+      "created_at": "2026-06-06 00:01"
+    },
+    {
+      "id": "service-ui-ux",
+      "title": "UI/UX Design",
+      "description": "User-friendly layouts, modern visual systems, wireframes, prototypes, and polished experiences for web and mobile products.",
+      "icon": "UX",
+      "created_at": "2026-06-06 00:02"
+    },
+    {
+      "id": "service-mobile-app-development",
+      "title": "Mobile App Development",
+      "description": "Mobile app screens, app-ready flows, frontend interfaces, and smooth product experiences for startups and businesses.",
+      "icon": "MA",
+      "created_at": "2026-06-06 00:03"
+    },
+    {
+      "id": "service-ai-automation",
+      "title": "AI Automation",
+      "description": "Smart workflows, automated responses, lead handling, content support, and AI-powered tools that save time.",
+      "icon": "AI",
+      "created_at": "2026-06-06 00:04"
+    },
+    {
+      "id": "service-database-management",
+      "title": "Database Management",
+      "description": "Secure database setup, CRUD systems, dashboards, records, reports, and organized dynamic website data.",
+      "icon": "DB",
+      "created_at": "2026-06-06 00:05"
+    },
+    {
+      "id": "service-domain-hosting",
+      "title": "Domain & Hosting Solutions",
+      "description": "Domain setup, hosting guidance, SSL support, DNS configuration, and reliable launch preparation.",
+      "icon": "DH",
+      "created_at": "2026-06-06 00:06"
+    },
+    {
+      "id": "service-cloud-deployment",
+      "title": "Cloud Deployment",
+      "description": "Cloud hosting, deployment setup, production configuration, backups, and launch-ready performance checks.",
+      "icon": "CD",
+      "created_at": "2026-06-06 00:07"
+    },
+    {
+      "id": "service-maintenance-support",
+      "title": "Maintenance & Support",
+      "description": "Bug fixes, content updates, uptime support, security checks, and long-term improvements after launch.",
+      "icon": "MS",
+      "created_at": "2026-06-06 00:08"
+    },
+    {
+      "id": "service-seo-optimization",
+      "title": "SEO Optimization",
+      "description": "Search-ready structure, metadata, speed tuning, content clarity, and performance improvements for better reach.",
+      "icon": "SE",
+      "created_at": "2026-06-06 00:09"
+    },
+    {
+      "id": "service-e-commerce",
+      "title": "E-Commerce Solutions",
+      "description": "Online stores, product pages, checkout-ready flows, order systems, and scalable shopping experiences.",
+      "icon": "EC",
+      "created_at": "2026-06-06 00:10"
+    },
+    {
+      "id": "service-social-media",
+      "title": "Social Media Management",
+      "description": "Profile setup, content planning, creative posts, campaign support, and stronger brand presence online.",
+      "icon": "SM",
+      "created_at": "2026-06-06 00:11"
+    }
+  ]
+}

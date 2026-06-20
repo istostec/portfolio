@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "ISTOS Admin" }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.PNG') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    <div class="bg-water"></div>
+    <aside class="sidebar">
+        <a class="brand" href="{{ url_for('dashboard') }}">
+            <img src="{{ url_for('static', filename='img/logo.PNG') }}" alt="ISTOS TECH">
+            <div class="brand-text-container">
+                <strong>ISTOS TECH</strong>
+                <small>Admin Studio</small>
+            </div>
+        </a>
+        <nav>
+            <a href="{{ url_for('dashboard') }}" class="{{ 'active' if active == 'dashboard' else '' }}">Dashboard</a>
+            <a href="{{ url_for('projects') }}" class="{{ 'active' if active == 'projects' else '' }}">Portfolio</a>
+            <a href="{{ url_for('admin_services') }}" class="{{ 'active' if active == 'services' else '' }}">Services</a>
+            <a href="{{ url_for('reviews') }}" class="{{ 'active' if active == 'reviews' else '' }}">Reviews</a>
+            <a href="{{ url_for('contacts') }}" class="{{ 'active' if active == 'contacts' else '' }}">Contacts</a>
+        </nav>
+        <a class="logout" href="{{ url_for('logout') }}">Logout</a>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <p>{{ eyebrow or "Admin Panel" }}</p>
+                <h1>{{ heading or "Dashboard" }}</h1>
+            </div>
+            <div class="admin-pill">Logged in as Admin</div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-wrap">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

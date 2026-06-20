@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore ISTOS TECH portfolio projects across business websites, dashboards, web apps, mobile app interfaces, AI solutions, and e-commerce stores.">
+    <meta name="keywords" content="ISTOS TECH portfolio, web app projects India, UI UX design portfolio, digital agency work Gujarat">
+    <meta name="author" content="ISTOS TECH">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfolio | ISTOS TECH — Our Featured Work">
+    <meta property="og:description" content="Recent ISTOS TECH work designed to feel fast, polished, and business-ready.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://istostech.com/projects">
+    <meta property="og:image" content="/images/navbarlogo.jpeg">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/x-icon" href="/images/navbarlogo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <title>Portfolio | ISTOS TECH — Our Featured Work</title>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <a href="/" class="brand" aria-label="ISTOS TECH Home">
+            <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo" class="logo" width="48" height="48" fetchpriority="high">
+            <div class="brand-text"><span class="site-title">ISTOS TECH</span><span class="tagline">Turning Ideas Into Digital Reality</span></div>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><span class="hamburger"></span></button>
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/projects" class="active">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-shell" id="main-content">
+        <section class="page-hero" aria-label="Portfolio hero">
+            <div>
+                <span class="page-kicker reveal">Portfolio</span>
+                <h1 class="reveal" data-delay="80">Recent work designed to feel <span>fast, polished, and business-ready.</span></h1>
+                <p class="reveal" data-delay="160">Explore sample project directions that show the kind of digital systems ISTOS TECH builds for clients: management platforms, productivity apps, and professional company websites.</p>
+            </div>
+            <div class="hero-panel reveal" data-delay="220" id="portfolio-approach-panel">
+                <h2>Project approach</h2>
+                <p>Every project starts with user goals, clear page structure, responsive UI, and practical development choices.</p>
+                <div class="panel-stat">
+                    <div class="mini-card" id="panel-stat-1"><strong>3x</strong><span>Faster planning</span></div>
+                    <div class="mini-card" id="panel-stat-2"><strong>SEO</strong><span>Ready structure</span></div>
+                    <div class="mini-card" id="panel-stat-3"><strong>UI</strong><span>Polished details</span></div>
+                    <div class="mini-card" id="panel-stat-4"><strong>QA</strong><span>Launch checks</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-band" aria-labelledby="featured-projects-title">
+            <div class="section-head reveal">
+                <span class="page-kicker">Featured work</span>
+                <h2 id="featured-projects-title">Featured Projects</h2>
+                <p>Professional concepts and client-ready builds across business, productivity, and operations.</p>
+            </div>
+            <div class="portfolio-filter reveal" data-portfolio-filter role="group" aria-label="Filter projects by category" id="portfolio-filter-group">
+                <button type="button" class="active" data-category="all" id="filter-all">All</button>
+                <button type="button" data-category="Web Development" id="filter-web">Web Dev</button>
+                <button type="button" data-category="E-Commerce Solutions" id="filter-ecom">E-Commerce</button>
+                <button type="button" data-category="UI/UX Design" id="filter-uiux">UI/UX</button>
+                <button type="button" data-category="Mobile App Development" id="filter-mobile">Mobile App</button>
+                <button type="button" data-category="AI Automation" id="filter-ai">AI Automation</button>
+                <button type="button" data-category="SEO Optimization" id="filter-seo">SEO</button>
+            </div>
+            <div class="portfolio-grid" data-project-grid data-api="/api/projects" id="portfolio-grid-main" aria-live="polite"></div>
+        </section>
+
+        <section class="section-band" aria-labelledby="improve-title">
+            <div class="wide-grid">
+                <article class="water-card reveal" id="what-we-improve">
+                    <h2 id="improve-title">What We Improve</h2>
+                    <ul class="page-list">
+                        <li>Visual trust through professional interface design.</li>
+                        <li>Clear navigation so visitors reach the right page quickly.</li>
+                        <li>Better lead capture through strong calls to action.</li>
+                        <li>Faster page experience across mobile and desktop.</li>
+                    </ul>
+                </article>
+                <article class="water-card reveal" data-delay="120" id="project-invite">
+                    <h2>Want Your Project Here?</h2>
+                    <p>We can build a portfolio-ready digital product for your brand, service, or internal team workflow.</p>
+                    <div class="btn-row"><a href="/contact" class="btn-dark-page" id="discuss-project-btn">Discuss a Project →</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-strip reveal" aria-label="Portfolio call to action" id="portfolio-cta">
+            <h2>Let us build your next case study.</h2>
+            <p>Bring the idea. We will help shape, design, build, and launch it.</p>
+            <a href="/contact" class="btn-light" id="portfolio-cta-btn">Contact ISTOS TECH →</a>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo" loading="lazy" width="60" height="60">
+                <h3>ISTOS TECH</h3>
+                <p>Professional websites, mobile app interfaces, and digital growth services for modern businesses.</p>
+                <div class="social-links" aria-label="Social media links">
+                    <a href="https://www.linkedin.com/company/istos-tech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.56V20h3.38V8.98ZM5.25 4C4.17 4 3.5 4.72 3.5 5.66c0 1 .68 1.68 1.7 1.68h.02c1.1 0 1.76-.68 1.76-1.68C6.96 4.72 6.3 4 5.25 4ZM20.5 13.68c0-3.38-1.8-4.95-4.2-4.95-1.94 0-2.8 1.07-3.28 1.82V8.98H9.64c.04 1.03 0 11.02 0 11.02h3.38v-6.16c0-.33.02-.66.12-.9.26-.66.86-1.34 1.86-1.34 1.31 0 1.84 1 1.84 2.47V20h3.38l.28-6.32Z"/></svg></a>
+                    <a href="https://x.com/istostech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.18 4h3.06l-6.68 7.64L21.42 20h-6.15l-4.82-5.78L4.94 20H1.87l7.15-8.17L1.5 4h6.31l4.35 5.26L17.18 4Zm-1.07 14.53h1.7L6.88 5.39H5.06l11.05 13.14Z"/></svg></a>
+                    <a href="https://www.instagram.com/istostech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 2.6a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8ZM12 7.2A4.8 4.8 0 1 1 12 16.8 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/projects">Portfolio</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="/services">Web Development</a>
+                <a href="/services">UI/UX Design</a>
+                <a href="/services">Mobile App Development</a>
+                <a href="/services">AI Automation</a>
+                <a href="/services">E-Commerce Solutions</a>
+                <a href="/services">Social Media Management</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:Istos.tec@gmail.com">Istos.tec@gmail.com</a>
+                <a href="/contact">+91 7201943987</a>
+                <a href="/contact">Gujarat, India</a>
+                <a href="/contact" class="footer-cta">Start Project</a>
+            </div>
+            <div class="newsletter">
+                <h4>Newsletter</h4>
+                <p>Get practical website, SEO, and launch tips from ISTOS TECH.</p>
+                <form id="newsletter-form-portfolio" novalidate>
+                    <label class="sr-only" for="newsletter-email-portfolio">Email address</label>
+                    <input id="newsletter-email-portfolio" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 ISTOS TECH. All Rights Reserved.</div>
+    </footer>
+
+    <script src="/Js/navbar.js"></script>
+    <script src="/Js/cursor.js"></script>
+    <script src="/Js/pages.js"></script>
+</body>
+</html>

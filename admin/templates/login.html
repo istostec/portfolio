@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTOS Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body class="login-body">
+    <div class="login-shell">
+        <div class="login-brand">
+            <img src="{{ url_for('static', filename='img/logo.PNG') }}" alt="ISTOS TECH">
+            <span>ISTOS TECH</span>
+        </div>
+        <form class="login-card" method="post">
+            <span class="kicker">Secure Admin</span>
+            <h1>Manage your digital studio.</h1>
+            <p>Login to manage portfolio projects, reviews, uploads, and contact leads.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <label>Email</label>
+            <input type="text" name="username" placeholder="admin@firm.com" required>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="admin123" required>
+            <button type="submit">Login Dashboard</button>
+        </form>
+    </div>
+</body>
+</html>

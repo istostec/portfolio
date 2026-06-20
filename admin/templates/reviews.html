@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set active = "reviews" %}
+{% set heading = "Review Manager" %}
+{% set eyebrow = "Client feedback" %}
+{% block content %}
+<section class="panel">
+    <span class="kicker">Add Review</span>
+    <form class="admin-form" method="post">
+        <div class="form-grid">
+            <label>Client Name<input name="client" placeholder="Client name" required></label>
+            <label>Role / Company<input name="role" placeholder="Founder, Business Owner"></label>
+            <label>Rating
+                <select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+            </label>
+            <label>Status
+                <select name="status"><option>Visible</option><option>Hidden</option></select>
+            </label>
+        </div>
+        <label>Review Message<textarea name="message" placeholder="Client review..." required></textarea></label>
+        <button type="submit">Add Review</button>
+    </form>
+</section>
+
+<section class="card-list">
+    {% for review in reviews %}
+    <article class="manage-card review-card">
+        <div>
+            <span class="status">{{ review.status }}</span>
+            <h3>{{ review.client }}</h3>
+            <small>{{ review.role }} | {{ review.created_at }}</small>
+            <p>{{ "★" * review.rating }} {{ review.message }}</p>
+        </div>
+        <div class="contact-actions">
+            <form method="post" action="{{ url_for('edit_review', item_id=review.id) }}">
+                <label>Client Name<input name="client" value="{{ review.client }}" required></label>
+                <label>Role / Company<input name="role" value="{{ review.role }}"></label>
+                <label>Rating<select name="rating">
+                    <option {{ 'selected' if review.rating == 5 else '' }}>5</option>
+                    <option {{ 'selected' if review.rating == 4 else '' }}>4</option>
+                    <option {{ 'selected' if review.rating == 3 else '' }}>3</option>
+                    <option {{ 'selected' if review.rating == 2 else '' }}>2</option>
+                    <option {{ 'selected' if review.rating == 1 else '' }}>1</option>
+                </select></label>
+                <label>Status<select name="status">
+                    <option {{ 'selected' if review.status == 'Visible' else '' }}>Visible</option>
+                    <option {{ 'selected' if review.status == 'Hidden' else '' }}>Hidden</option>
+                </select></label>
+                <label>Review Message<textarea name="message" required>{{ review.message }}</textarea></label>
+                <button type="submit">Save</button>
+            </form>
+            <form method="post" action="{{ url_for('delete_review', item_id=review.id) }}">
+                <button class="danger" type="submit">Delete</button>
+            </form>
+        </div>
+    </article>
+    {% else %}
+    <div class="panel">No reviews yet.</div>
+    {% endfor %}
+</section>
+{% endblock %}

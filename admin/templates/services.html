@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% set active = "services" %}
+{% set heading = "Service Manager" %}
+{% set eyebrow = "Add and manage services" %}
+{% block content %}
+<section class="panel">
+    <span class="kicker">Add Service</span>
+    <form class="admin-form" method="post">
+        <div class="form-grid">
+            <label>Service Title<input name="title" placeholder="Web Development" required></label>
+            <label>Icon Code<input name="icon" placeholder="WD"></label>
+        </div>
+        <label>Description<textarea name="description" placeholder="Short premium service description..." required></textarea></label>
+        <button type="submit">Add Service</button>
+    </form>
+</section>
+
+<section class="card-list">
+    {% for service in services %}
+    {% set image_map = {
+        'WD': 'web_dev.png',
+        'UX': 'uiux.png',
+        'MA': 'app_dev.png',
+        'AI': 'AI_auto.png',
+        'DB': 'database.png',
+        'DH': 'domain & hosting.png',
+        'CD': 'cloude.png',
+        'MS': 'web_main.png',
+        'SE': 'sco.png',
+        'EC': 'E-com.png',
+        'SM': 'cm.png'
+    } %}
+    {% set image_name = image_map.get(service.icon or '', 'web_dev.png') %}
+    {% set image_url = url_for('site_images', filename=image_name) %}
+    <article class="manage-card service-manage-card">
+        <img src="{{ image_url }}" alt="{{ service.title }} preview">
+        <div>
+            <span class="status">Service</span>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <small>{{ service.created_at }}</small>
+        </div>
+        <div class="contact-actions">
+            <form method="post" action="{{ url_for('edit_admin_service', item_id=service.id) }}">
+                <label>Title<input name="title" value="{{ service.title }}" required></label>
+                <label>Icon Code<input name="icon" value="{{ service.icon }}"></label>
+                <label>Description<textarea name="description" required>{{ service.description }}</textarea></label>
+                <button type="submit">Save</button>
+            </form>
+            <form method="post" action="{{ url_for('delete_admin_service', item_id=service.id) }}">
+                <button class="danger" type="submit">Delete</button>
+            </form>
+        </div>
+    </article>
+    {% else %}
+    <div class="panel">No services yet.</div>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISTOS TECH builds premium websites, SaaS platforms, AI solutions, e-commerce stores, mobile apps, and custom software that grow modern businesses.">
+    <meta name="keywords" content="ISTOS TECH, web development, UI UX design, AI automation, SaaS platform, e-commerce, mobile app, software agency, Gujarat, India">
+    <meta name="author" content="ISTOS TECH">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ISTOS TECH | Premium Digital Agency — Websites, AI & Software">
+    <meta property="og:description" content="We build high-performance websites, AI solutions, SaaS platforms and custom software that grow businesses. Based in Gujarat, India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://istostech.com/">
+    <meta property="og:image" content="/images/navbarlogo.jpeg">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ISTOS TECH | Premium Digital Agency">
+    <meta name="twitter:description" content="Premium websites, AI solutions, SaaS platforms & custom software that grow businesses.">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/x-icon" href="/images/navbarlogo.jpeg">
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="/images/de.png" fetchpriority="high">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <title>ISTOS TECH | Premium Digital Agency — Websites, AI & Software</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ISTOS TECH",
+      "url": "https://istostech.com",
+      "logo": "https://istostech.com/images/navbarlogo.jpeg",
+      "description": "Premium digital agency building websites, AI solutions, SaaS platforms and custom software.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/istos-tech/",
+        "https://x.com/istostech",
+        "https://www.instagram.com/istostech/"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <header class="navbar" role="banner">
+        <a href="/" class="brand" aria-label="ISTOS TECH Home">
+            <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo" class="logo" width="48" height="48" fetchpriority="high">
+            <div class="brand-text">
+                <span class="site-title">ISTOS TECH</span>
+                <span class="tagline">Turning Ideas Into Digital Reality</span>
+            </div>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation" id="nav-toggle-btn">
+            <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation" role="navigation">
+            <a href="/" class="active" aria-current="page">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/projects">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="home-page" id="main-content">
+        <!-- ═══════════════ HERO ═══════════════ -->
+        <section class="home-hero" aria-label="Hero section" id="hero">
+            <div class="hero-copy">
+                <span class="hero-badge" id="hero-badge">
+                    Premium Design &amp; Engineering Agency
+                </span>
+                <h1 class="animated-hero-title" id="hero-title" aria-label="We Build High-Performance Digital Products That Grow Businesses">
+                    <span class="headline-line">We Build High&#8209;Performance</span>
+                    <span class="headline-line hero-rotating-line">
+                        <span class="rotating-keyword-wrapper" aria-live="polite" aria-atomic="true">
+                            <span class="rotating-keyword" id="rotating-kw">AI Solutions</span>
+                        </span>
+                    </span>
+                    <span class="headline-line">That Grow Businesses.</span>
+                </h1>
+                <p id="hero-desc">
+                    ISTOS TECH engineers modern, conversion-focused websites, polished interfaces, and automated digital systems. Built to scale, optimized for SEO, and delivered with launch-ready support.
+                </p>
+                <div class="hero-buttons" id="hero-cta">
+                    <a href="/contact" class="btn-primary" id="btn-start-project">Start Your Project <span class="btn-arrow">→</span></a>
+                    <a href="/contact#contact-form" class="btn-secondary" id="btn-book-consultation">Book Free Consultation</a>
+                    <a href="/projects" class="btn-secondary" id="btn-view-portfolio">View Portfolio</a>
+                </div>
+                <!-- Trust badges -->
+                <div class="hero-trust" id="hero-trust">
+                    <span class="trust-item"><span class="trust-dot"></span>50+ Projects Delivered</span>
+                    <span class="trust-sep">·</span>
+                    <span class="trust-item"><span class="trust-dot"></span>99% Client Satisfaction</span>
+                    <span class="trust-sep">·</span>
+                    <span class="trust-item"><span class="trust-dot"></span>24/7 Support</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" id="hero-visual">
+                <div class="hero-image-card water-card">
+                    <img src="/images/de.png" alt="Web design and development services — ISTOS TECH" fetchpriority="high" decoding="async" width="600" height="440">
+                </div>
+                <div class="floating-card card-one" id="fc-one">
+                    <div class="fc-icon">🚀</div>
+                    <div class="fc-content">
+                        <strong class="counter-val" data-target="50" data-suffix="+">0+</strong>
+                        <span>Projects Delivered</span>
+                    </div>
+                </div>
+                <div class="floating-card card-two" id="fc-two">
+                    <div class="fc-icon">⭐</div>
+                    <div class="fc-content">
+                        <strong class="counter-val" data-target="99" data-suffix="%">0%</strong>
+                        <span>Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ STATS ═══════════════ -->
+        <section class="stats home-section" aria-label="Key statistics" id="stats-section">
+            <div class="stat-card reveal" id="stat-1">
+                <span class="stat-icon">01</span>
+                <h3 class="counter-num" data-target="50" data-suffix="+">50+</h3>
+                <p>Completed Projects</p>
+            </div>
+            <div class="stat-card reveal" data-delay="80" id="stat-2">
+                <span class="stat-icon">02</span>
+                <h3 class="counter-num" data-target="20" data-suffix="+">20+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-card reveal" data-delay="160" id="stat-3">
+                <span class="stat-icon">03</span>
+                <h3 class="counter-num" data-target="99" data-suffix="%">99%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-card reveal" data-delay="240" id="stat-4">
+                <span class="stat-icon">04</span>
+                <h3>Fast</h3>
+                <p>Uptime &amp; Speed Delivery</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════ SERVICES ═══════════════ -->
+        <section class="services home-section" aria-labelledby="services-title" id="services-section">
+            <div class="section-title reveal" id="services-header">
+                <span class="section-kicker">What we do</span>
+                <h2 id="services-title">Our Services</h2>
+                <p>Professional digital services with clear strategy, polished interfaces, responsive development, and launch-ready support.</p>
+            </div>
+
+            <div class="service-grid" data-service-grid data-api="/api/services" id="service-grid-home">
+                <article class="service-card reveal" id="svc-web">
+                    <div class="service-media">
+                        <img src="/images/web_dev.png" alt="Web development service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">WD</div>
+                    <h3>Web Development</h3>
+                    <p>Premium websites, landing pages, portfolios, and custom web apps with fast loading, clean structure, and responsive polish.</p>
+                    <a href="/services" aria-label="Explore Web Development service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="80" id="svc-uiux">
+                    <div class="service-media">
+                        <img src="/images/uiux.png" alt="UI UX design service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">UX</div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-friendly layouts, modern visual systems, wireframes, prototypes, and polished experiences for web and mobile products.</p>
+                    <a href="/services" aria-label="Explore UI/UX Design service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="160" id="svc-mobile">
+                    <div class="service-media">
+                        <img src="/images/app_dev.png" alt="Mobile app development service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">MA</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Mobile app screens, app-ready flows, frontend interfaces, and smooth product experiences for startups and businesses.</p>
+                    <a href="/services" aria-label="Explore Mobile App Development service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="240" id="svc-ai">
+                    <div class="service-media">
+                        <img src="/images/AI_auto.png" alt="AI automation service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">AI</div>
+                    <h3>AI Automation</h3>
+                    <p>Smart workflows, automated responses, lead handling, content support, and AI-powered tools that save time.</p>
+                    <a href="/services" aria-label="Explore AI Automation service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="320" id="svc-db">
+                    <div class="service-media">
+                        <img src="/images/database.png" alt="Database management service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">DB</div>
+                    <h3>Database Management</h3>
+                    <p>Secure database setup, CRUD systems, dashboards, records, reports, and organized dynamic website data.</p>
+                    <a href="/services" aria-label="Explore Database Management service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="400" id="svc-domain">
+                    <div class="service-media">
+                        <img src="/images/domain & hosting.png" alt="Domain and hosting solutions" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">DH</div>
+                    <h3>Domain &amp; Hosting Solutions</h3>
+                    <p>Domain setup, hosting guidance, SSL support, DNS configuration, and reliable launch preparation.</p>
+                    <a href="/services" aria-label="Explore Domain and Hosting service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="480" id="svc-cloud">
+                    <div class="service-media">
+                        <img src="/images/cloude.png" alt="Cloud deployment service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">CD</div>
+                    <h3>Cloud Deployment</h3>
+                    <p>Cloud hosting, deployment setup, production configuration, backups, and launch-ready performance checks.</p>
+                    <a href="/services" aria-label="Explore Cloud Deployment service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="560" id="svc-maint">
+                    <div class="service-media">
+                        <img src="/images/web_main.png" alt="Maintenance and support service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">MS</div>
+                    <h3>Maintenance &amp; Support</h3>
+                    <p>Bug fixes, content updates, uptime support, security checks, and long-term improvements after launch.</p>
+                    <a href="/services" aria-label="Explore Maintenance and Support service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="640" id="svc-seo">
+                    <div class="service-media">
+                        <img src="/images/sco.png" alt="SEO optimization service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">SE</div>
+                    <h3>SEO Optimization</h3>
+                    <p>Search-ready structure, metadata, speed tuning, content clarity, and performance improvements for better reach.</p>
+                    <a href="/services" aria-label="Explore SEO Optimization service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="720" id="svc-ecom">
+                    <div class="service-media">
+                        <img src="/images/E-com.png" alt="E-Commerce solutions service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">EC</div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Online stores, product pages, checkout-ready flows, order systems, and scalable shopping experiences.</p>
+                    <a href="/services" aria-label="Explore E-Commerce Solutions service">Explore Service</a>
+                </article>
+
+                <article class="service-card reveal" data-delay="800" id="svc-social">
+                    <div class="service-media">
+                        <img src="/images/cm.png" alt="Social media management service" loading="lazy" decoding="async" width="400" height="250">
+                    </div>
+                    <div class="service-icon" aria-hidden="true">SM</div>
+                    <h3>Social Media Management</h3>
+                    <p>Profile setup, content planning, creative posts, campaign support, and stronger brand presence online.</p>
+                    <a href="/services" aria-label="Explore Social Media Management service">Explore Service</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════ WHY US ═══════════════ -->
+        <section class="why-us home-section" aria-labelledby="why-title" id="why-section">
+            <div class="section-title reveal">
+                <span class="section-kicker">Value Proposition</span>
+                <h2 id="why-title">Why Choose ISTOS TECH?</h2>
+                <p>We combine design elegance with software engineering to deliver products that acquire customers and scale operations.</p>
+            </div>
+            <div class="why-grid" id="why-grid">
+                <div class="why-card reveal" id="why-1">
+                    <div class="why-icon" aria-hidden="true">💎</div>
+                    <h3>Quality Development</h3>
+                    <p>Clean code architectures, optimized database designs, and standard styling implementations.</p>
+                </div>
+                <div class="why-card reveal" data-delay="80" id="why-2">
+                    <div class="why-icon" aria-hidden="true">💬</div>
+                    <h3>Fast Communication</h3>
+                    <p>Direct contact channel to project engineers. Regular status review calls and proactive iteration reviews.</p>
+                </div>
+                <div class="why-card reveal" data-delay="160" id="why-3">
+                    <div class="why-icon" aria-hidden="true">🚀</div>
+                    <h3>Modern Technologies</h3>
+                    <p>Building with powerful platforms (HTML5, CSS3, ES6 JavaScript, React, Python Flask, MySQL) aligned with scope.</p>
+                </div>
+                <div class="why-card reveal" data-delay="240" id="why-4">
+                    <div class="why-icon" aria-hidden="true">📈</div>
+                    <h3>SEO Friendly Solutions</h3>
+                    <p>Semantic markup, schema layouts, and speed optimization strategies to maximize organic search indexes.</p>
+                </div>
+                <div class="why-card reveal" data-delay="320" id="why-5">
+                    <div class="why-icon" aria-hidden="true">🛡️</div>
+                    <h3>Long-Term Support</h3>
+                    <p>Comprehensive support packages providing server updates, security checks, and future scope scaling.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ RESULTS ═══════════════ -->
+        <section class="results home-section" aria-labelledby="results-title" id="results-section">
+            <div class="section-title reveal">
+                <span class="section-kicker">Data-Driven Delivery</span>
+                <h2 id="results-title">Engineered for Business Results</h2>
+                <p>We build digital systems focused on core business metrics that directly affect conversion and scalability.</p>
+            </div>
+            <div class="results-grid" id="results-grid">
+                <div class="result-card reveal" id="res-1">
+                    <strong>90+</strong>
+                    <h3>PageSpeed Score</h3>
+                    <p>Optimized scripts and layouts resulting in near-instant mobile response speeds.</p>
+                </div>
+                <div class="result-card reveal" data-delay="80" id="res-2">
+                    <strong>2x</strong>
+                    <h3>Lead Conversions</h3>
+                    <p>Highly visible calls-to-action that capture client inquiries and book consultations.</p>
+                </div>
+                <div class="result-card reveal" data-delay="160" id="res-3">
+                    <strong>100%</strong>
+                    <h3>Mobile Usability</h3>
+                    <p>Responsive grid breakpoints mapping to all mobile devices and display interfaces.</p>
+                </div>
+                <div class="result-card reveal" data-delay="240" id="res-4">
+                    <strong>Zero</strong>
+                    <h3>Performance Lag</h3>
+                    <p>Engineered database pools that process concurrent page requests without memory friction.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ PORTFOLIO ═══════════════ -->
+        <section class="portfolio home-section" aria-labelledby="portfolio-title" id="portfolio-section">
+            <div class="section-title reveal">
+                <span class="section-kicker">Featured work</span>
+                <h2 id="portfolio-title">Project Types We Build</h2>
+                <p>Clean digital products for companies, creators, and growing teams.</p>
+            </div>
+            <div class="portfolio-grid" data-home-project-grid data-api="/api/projects" id="home-project-grid"></div>
+        </section>
+
+        <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+        <section class="testimonials home-section" aria-labelledby="testimonials-title" id="testimonials-section">
+            <div class="section-title reveal">
+                <span class="section-kicker">Client feedback</span>
+                <h2 id="testimonials-title">Trusted by Growing Teams</h2>
+                <p>Clear communication, polished delivery, and practical support from idea to launch.</p>
+            </div>
+            <div class="testimonial-grid" data-review-grid data-api="/api/reviews" id="review-grid"></div>
+        </section>
+
+        <!-- ═══════════════ PROCESS ═══════════════ -->
+        <section class="process home-section" aria-labelledby="process-title" id="process-section">
+            <div class="section-title reveal">
+                <span class="section-kicker">Our process</span>
+                <h2 id="process-title">6 Steps to Turn Ideas into Reality</h2>
+                <p>We maintain an agile, transparent development sequence to guarantee high-end project delivery.</p>
+            </div>
+            <div class="process-grid" id="process-grid">
+                <article class="process-card reveal" id="proc-1">
+                    <span aria-hidden="true">01</span>
+                    <h3>Requirement Discussion</h3>
+                    <p>We conduct detailed initial discovery calls to explore client workflows, objectives, and parameters.</p>
+                </article>
+                <article class="process-card reveal" data-delay="60" id="proc-2">
+                    <span aria-hidden="true">02</span>
+                    <h3>Planning</h3>
+                    <p>We document system architecture details, data entity relationships, tech stack choices, and roadmap scopes.</p>
+                </article>
+                <article class="process-card reveal" data-delay="120" id="proc-3">
+                    <span aria-hidden="true">03</span>
+                    <h3>Design</h3>
+                    <p>We design custom visual templates, user flow structures, wireframes, and prototypes for early review.</p>
+                </article>
+                <article class="process-card reveal" data-delay="180" id="proc-4">
+                    <span aria-hidden="true">04</span>
+                    <h3>Development</h3>
+                    <p>We implement clean code patterns, setup responsive styling layouts, and connect database structures.</p>
+                </article>
+                <article class="process-card reveal" data-delay="240" id="proc-5">
+                    <span aria-hidden="true">05</span>
+                    <h3>Testing</h3>
+                    <p>We perform rigorous device scaling checks, link verifications, form validations, and database performance reviews.</p>
+                </article>
+                <article class="process-card reveal" data-delay="300" id="proc-6">
+                    <span aria-hidden="true">06</span>
+                    <h3>Launch</h3>
+                    <p>We configure server environments, manage DNS paths, secure connection SSLs, and deploy the production codebase.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════ CTA STRIP ═══════════════ -->
+        <section class="cta-strip reveal" aria-label="Call to action" id="cta-strip">
+            <h2>Ready to grow your business online?</h2>
+            <p>Let us create a modern website that attracts visitors, builds trust, and converts them into customers.</p>
+            <a href="/contact" class="btn-light" id="cta-book-btn">Book a Free Consultation &rarr;</a>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo" loading="lazy" width="60" height="60">
+                <h3>ISTOS TECH</h3>
+                <p>Professional websites, mobile app interfaces, and digital growth services for modern businesses.</p>
+                <div class="social-links" aria-label="Social media links">
+                    <a href="https://www.linkedin.com/company/istos-tech/" target="_blank" rel="noopener noreferrer" aria-label="ISTOS TECH on LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.56V20h3.38V8.98ZM5.25 4C4.17 4 3.5 4.72 3.5 5.66c0 1 .68 1.68 1.7 1.68h.02c1.1 0 1.76-.68 1.76-1.68C6.96 4.72 6.3 4 5.25 4ZM20.5 13.68c0-3.38-1.8-4.95-4.2-4.95-1.94 0-2.8 1.07-3.28 1.82V8.98H9.64c.04 1.03 0 11.02 0 11.02h3.38v-6.16c0-.33.02-.66.12-.9.26-.66.86-1.34 1.86-1.34 1.31 0 1.84 1 1.84 2.47V20h3.38l.28-6.32Z"/></svg>
+                    </a>
+                    <a href="https://x.com/istostech" target="_blank" rel="noopener noreferrer" aria-label="ISTOS TECH on X (Twitter)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.18 4h3.06l-6.68 7.64L21.42 20h-6.15l-4.82-5.78L4.94 20H1.87l7.15-8.17L1.5 4h6.31l4.35 5.26L17.18 4Zm-1.07 14.53h1.7L6.88 5.39H5.06l11.05 13.14Z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/istostech/" target="_blank" rel="noopener noreferrer" aria-label="ISTOS TECH on Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 2.6a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8ZM12 7.2A4.8 4.8 0 1 1 12 16.8 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/projects">Portfolio</a>
+                <a href="/blog">Blog</a>
+            </div>
+
+            <div>
+                <h4>Services</h4>
+                <a href="/services">Web Development</a>
+                <a href="/services">UI/UX Design</a>
+                <a href="/services">Mobile App Development</a>
+                <a href="/services">AI Automation</a>
+                <a href="/services">E-Commerce Solutions</a>
+                <a href="/services">Social Media Management</a>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:Istos.tec@gmail.com">Istos.tec@gmail.com</a>
+                <a href="/contact">+91 XXXXX XXXXX</a>
+                <a href="/contact">Gujarat, India</a>
+                <a href="/contact" class="footer-cta">Start Project</a>
+            </div>
+
+            <div class="newsletter">
+                <h4>Newsletter</h4>
+                <p>Get practical website, SEO, and launch tips from ISTOS TECH.</p>
+                <form id="newsletter-form-home" novalidate>
+                    <label class="sr-only" for="newsletter-email">Email address</label>
+                    <input id="newsletter-email" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 ISTOS TECH. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="/Js/navbar.js"></script>
+    <script src="/Js/cursor.js"></script>
+    <script src="/Js/pages.js"></script>
+    <script src="/Js/particles.js"></script>
+    <script src="/Js/interactions.js"></script>
+    <script src="/Js/gsap-animations.js" defer></script>
+</body>
+</html>

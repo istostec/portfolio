@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% set active = "dashboard" %}
+{% set heading = "Admin Dashboard" %}
+{% set eyebrow = "Overview" %}
+{% block content %}
+<section class="stats-grid">
+    <article class="stat-card"><span>{{ stats.projects }}</span><p>Portfolio Projects</p></article>
+    <article class="stat-card"><span>{{ stats.services }}</span><p>Services</p></article>
+    <article class="stat-card"><span>{{ stats.reviews }}</span><p>Client Reviews</p></article>
+    <article class="stat-card"><span>{{ stats.contacts }}</span><p>Total Contacts</p></article>
+    <article class="stat-card"><span>{{ stats.new_contacts }}</span><p>New Leads</p></article>
+</section>
+
+<section class="panel two-col">
+    <div>
+        <span class="kicker">Quick Actions</span>
+        <h2>Manage everything from one place.</h2>
+        <p>Upload portfolio work by category, add reviews, and track contact leads by service without touching the main website files.</p>
+        <div class="action-row">
+            <a href="{{ url_for('projects') }}">Add Project</a>
+            <a href="{{ url_for('admin_services') }}">Add Service</a>
+            <a href="{{ url_for('reviews') }}">Add Review</a>
+            <a href="{{ url_for('contacts') }}">View Contacts</a>
+        </div>
+    </div>
+    <div class="glass-orb">
+        <strong>Admin</strong>
+        <span>Projects | Categories | Contacts</span>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <span class="kicker">Recent Leads</span>
+            <h2>Latest contacts</h2>
+        </div>
+        <a class="soft-link" href="{{ url_for('contacts') }}">Open all</a>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Service</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+                {% for contact in recent_contacts %}
+                <tr>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.service }}</td>
+                    <td><span class="status">{{ contact.status }}</span></td>
+                    <td>{{ contact.created_at }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="5">No contacts yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

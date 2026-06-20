@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Showcasing project details and engineering solutions from ISTOS TECH — a premium digital agency building websites, AI systems, and custom software.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Project Case Study | ISTOS TECH">
+    <meta property="og:description" content="Explore how ISTOS TECH designs and builds premium digital products.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="/images/navbarlogo.jpeg">
+    <meta name="theme-color" content="#09090b">
+    <link rel="icon" type="image/x-icon" href="/images/navbarlogo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <title>Project Details | ISTOS TECH</title>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="brand">
+    <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo" class="logo" width="48" height="48" fetchpriority="high">
+            <div class="brand-text"><span class="site-title">ISTOS TECH</span><span class="tagline">Turning Ideas Into Digital Reality</span></div>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><span class="hamburger"></span></button>
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/projects" class="active">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-shell" id="projectDetailContainer" role="main">
+        <section class="page-hero">
+            <div>
+                <span class="page-kicker reveal" id="projectCategory">Case Study</span>
+                <h1 class="reveal" data-delay="80" id="projectTitle">Project Title</h1>
+                <div class="chip-row reveal" data-delay="120" id="projectTech" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;"></div>
+            </div>
+            <div class="hero-panel reveal" data-delay="220" style="padding: 0; overflow: hidden; border: 1px solid var(--border-color); border-radius: var(--radius-lg); height: 350px;">
+                <img id="projectHeroImg" src="" alt="Project Image" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+            </div>
+        </section>
+
+        <section class="section-band">
+            <div class="wide-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <article class="water-card reveal" style="padding: 40px;">
+                    <h2>About the Project</h2>
+                    <p id="projectDescription" style="line-height: 1.7; color: var(--text-muted); white-space: pre-line; font-size: 1.1rem;"></p>
+                </article>
+                <article class="water-card reveal" data-delay="120" style="padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h2>Project Overview</h2>
+                        <ul class="page-list" style="margin-top: 20px;">
+                            <li><strong>Category:</strong> <span id="projectMetaCategory"></span></li>
+                            <li><strong>Client:</strong> Professional Concept</li>
+                            <li><strong>Service:</strong> Performance & Design</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="/contact" class="btn-dark-page" style="width: 100%; text-align: center;">Start Similar Project</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-band" id="screenshotsSection">
+            <div class="section-head reveal">
+                <h2>Visual Showcase</h2>
+                <p>Interactive screens and project screenshots.</p>
+            </div>
+            <div id="projectScreenshots" style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px;"></div>
+        </section>
+
+        <section class="cta-strip reveal">
+            <h2>Ready to build your custom software?</h2>
+            <p>Let's discuss how we can turn your ideas into a high-performance reality.</p>
+            <a href="/contact" class="btn-light">Discuss a Project</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content footer-content-main">
+            <div class="footer-brand">
+                <img src="/images/navbarlogo.jpeg" alt="Istos Tech Logo">
+                <h3>ISTOS TECH</h3>
+                <p>Professional websites, mobile app interfaces, and digital growth services for modern businesses.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/projects">Portfolio</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="/services">Web Development</a>
+                <a href="/services">UI/UX Design</a>
+                <a href="/services">Mobile App Development</a>
+                <a href="/services">AI Automation</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:contact@istostech.com">Istos.tec@gmail.com</a>
+                <a href="/contact">+91 7201943987</a>
+                <a href="/contact">Gujarat, India</a>
+            </div>
+        </div>
+        <div class="footer-bottom footer-bottom-main">&copy; 2026 ISTOS TECH. All Rights Reserved.</div>
+    </footer>
+
+    <script src="/Js/navbar.js"></script>
+    <script src="/Js/cursor.js"></script>
+    <script src="/Js/pages.js"></script>
+</body>
+</html>
