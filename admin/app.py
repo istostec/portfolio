@@ -587,6 +587,7 @@ def site_images(filename: str):
 # --- Admin auth & panel routes ---
 
 @app.route("/login", methods=["GET", "POST"])
+@csrf.exempt
 def login():
     if session.get("admin_logged_in"):
         return redirect(url_for("dashboard"))
