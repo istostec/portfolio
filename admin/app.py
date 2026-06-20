@@ -467,11 +467,10 @@ def public_about():
 def public_services():
     return render_clean_html("services.html", "/services")
 
-
-@app.route("/admin/projects", methods=["GET", "POST"])
-@login_required
-def projects():
-
+@app.route("/projects")
+def public_projects():
+    return render_clean_html("portfolio.html", "/projects")
+    
 @app.route("/blog")
 def public_blog():
     return render_clean_html("blog.html", "/blog")
@@ -632,7 +631,7 @@ def dashboard():
     return render_template("dashboard.html", stats=stats, recent_contacts=contacts[:5])
 
 
-@app.route("/projects", methods=["GET", "POST"])
+@app.route("/admin/projects", methods=["GET", "POST"])
 @login_required
 def projects():
     if request.method == "POST":
@@ -672,7 +671,10 @@ def admin_services():
             flash("Service added successfully.", "success")
         return redirect(url_for("admin_services"))
 
-    return render_template("services.html", services=repository.list_services())
+   return render_template(
+    "admin/services.html",
+    services=repository.list_services()
+)
 
 @app.route("/admin/services/<item_id>/delete", methods=["POST"])
 @login_required
