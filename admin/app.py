@@ -468,10 +468,9 @@ def public_services():
     return render_clean_html("services.html", "/services")
 
 
-@app.route("/projects")
-def public_projects():
-    return render_clean_html("portfolio.html", "/projects")
-
+@app.route("/admin/projects", methods=["GET", "POST"])
+@login_required
+def projects():
 
 @app.route("/blog")
 def public_blog():
@@ -706,7 +705,7 @@ def edit_admin_service(item_id: str):
     return redirect(url_for("admin_services"))
 
 
-@app.route("/projects/<item_id>/edit", methods=["POST"])
+@app.route("/admin/projects/<item_id>/edit", methods=["POST"])
 @login_required
 def edit_project(item_id: str):
     project_id = parse_id(item_id)
@@ -731,7 +730,7 @@ def edit_project(item_id: str):
     return redirect(url_for("projects"))
 
 
-@app.route("/projects/<item_id>/delete", methods=["POST"])
+@app.route("/admin/projects/<item_id>/delete", methods=["POST"])
 @login_required
 def delete_project(item_id: str):
     project_id = parse_id(item_id)
