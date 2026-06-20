@@ -6,6 +6,7 @@
 <section class="panel">
     <span class="kicker">Add Service</span>
     <form class="admin-form" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="form-grid">
             <label>Service Title<input name="title" placeholder="Web Development" required></label>
             <label>Icon Code<input name="icon" placeholder="WD"></label>
@@ -42,12 +43,14 @@
         </div>
         <div class="contact-actions">
             <form method="post" action="{{ url_for('edit_admin_service', item_id=service.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <label>Title<input name="title" value="{{ service.title }}" required></label>
                 <label>Icon Code<input name="icon" value="{{ service.icon }}"></label>
                 <label>Description<textarea name="description" required>{{ service.description }}</textarea></label>
                 <button type="submit">Save</button>
             </form>
-            <form method="post" action="{{ url_for('delete_admin_service', item_id=service.id) }}">
+           <form method="post" action="{{ url_for('delete_admin_service', item_id=service.id) }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <button class="danger" type="submit">Delete</button>
             </form>
         </div>
