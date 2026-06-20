@@ -335,7 +335,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         mainProjectGrid.innerHTML = '';
                         let filtered = allProjects;
                         if (category !== 'all') {
-                            filtered = allProjects.filter(p => p.category.toLowerCase() === category.toLowerCase());
+                            const catLower = category.toLowerCase().trim();
+                            filtered = allProjects.filter(p => {
+                                const pCat = (p.category || '').toLowerCase().trim();
+                                return pCat.includes(catLower) || catLower.includes(pCat);
+                            });
                         }
                         
                         if (filtered.length === 0) {
