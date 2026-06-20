@@ -655,7 +655,7 @@ def projects():
     return render_template("projects.html", projects=repository.list_projects())
 
 
-@app.route("/services", methods=["GET", "POST"])
+@app.route("/admin/services", methods=["GET", "POST"])
 @login_required
 def admin_services():
     if request.method == "POST":
@@ -674,8 +674,7 @@ def admin_services():
 
     return render_template("services.html", services=repository.list_services())
 
-
-@app.route("/services/<item_id>/delete", methods=["POST"])
+@app.route("/admin/services/<item_id>/delete", methods=["POST"])
 @login_required
 def delete_admin_service(item_id: str):
     service_id = parse_id(item_id)
@@ -684,7 +683,7 @@ def delete_admin_service(item_id: str):
     return redirect(url_for("admin_services"))
 
 
-@app.route("/services/<item_id>/edit", methods=["POST"])
+@app.route("/admin/services/<item_id>/edit", methods=["POST"])
 @login_required
 def edit_admin_service(item_id: str):
     service_id = parse_id(item_id)
