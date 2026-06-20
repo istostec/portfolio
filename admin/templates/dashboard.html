@@ -3,11 +3,11 @@
 {% set heading = "Admin Dashboard" %}
 {% set eyebrow = "Overview" %}
 {% block content %}
-<section class="stats-grid">
-    <article class="stat-card"><span>{{ stats.projects }}</span><p>Portfolio Projects</p></article>
-    <article class="stat-card"><span>{{ stats.services }}</span><p>Services</p></article>
-    <article class="stat-card"><span>{{ stats.reviews }}</span><p>Client Reviews</p></article>
-    <article class="stat-card"><span>{{ stats.contacts }}</span><p>Total Contacts</p></article>
+<section class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+    <article class="stat-card"><span>{{ stats.projects }}</span><p>Total Projects</p></article>
+    <article class="stat-card"><span>{{ stats.services }}</span><p>Total Services</p></article>
+    <article class="stat-card"><span>{{ stats.contacts }}</span><p>Total Messages</p></article>
+    <article class="stat-card"><span>{{ stats.users }}</span><p>Total Users</p></article>
     <article class="stat-card"><span>{{ stats.new_contacts }}</span><p>New Leads</p></article>
 </section>
 
@@ -33,27 +33,82 @@
     <div class="panel-head">
         <div>
             <span class="kicker">Recent Leads</span>
-            <h2>Latest contacts</h2>
+            <h2>Recent Messages</h2>
         </div>
         <a class="soft-link" href="{{ url_for('contacts') }}">Open all</a>
     </div>
     <div class="table-wrap">
         <table>
-            <thead><tr><th>Name</th><th>Email</th><th>Service</th><th>Status</th><th>Date</th></tr></thead>
+            <thead><tr><th>Name</th><th>Email</th><th>Service</th><th>Message</th><th>Status</th><th>Date</th></tr></thead>
             <tbody>
                 {% for contact in recent_contacts %}
                 <tr>
                     <td>{{ contact.name }}</td>
                     <td>{{ contact.email }}</td>
                     <td>{{ contact.service }}</td>
+                    <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="{{ contact.message }}">{{ contact.message }}</td>
                     <td><span class="status">{{ contact.status }}</span></td>
                     <td>{{ contact.created_at }}</td>
                 </tr>
                 {% else %}
-                <tr><td colspan="5">No contacts yet.</td></tr>
+                <tr><td colspan="6">No contacts yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <span class="kicker">Portfolio</span>
+            <h2>Recent Projects</h2>
+        </div>
+        <a class="soft-link" href="{{ url_for('projects') }}">Open all</a>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Title</th><th>Category</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+                {% for project in recent_projects %}
+                <tr>
+                    <td>{{ project.title }}</td>
+                    <td>{{ project.category }}</td>
+                    <td><span class="status">{{ project.status }}</span></td>
+                    <td>{{ project.created_at }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="4">No projects yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <span class="kicker">Services</span>
+            <h2>Recent Services</h2>
+        </div>
+        <a class="soft-link" href="{{ url_for('admin_services') }}">Open all</a>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Title</th><th>Icon</th><th>Date</th></tr></thead>
+            <tbody>
+                {% for service in recent_services %}
+                <tr>
+                    <td>{{ service.title }}</td>
+                    <td>{{ service.icon }}</td>
+                    <td>{{ service.created_at }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="3">No services yet.</td></tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 </section>
 {% endblock %}
+
