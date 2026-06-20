@@ -5,7 +5,8 @@
 {% block content %}
 <section class="panel">
     <span class="kicker">Add Review</span>
-    <form class="admin-form" method="post">
+   <form class="admin-form" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="form-grid">
             <label>Client Name<input name="client" placeholder="Client name" required></label>
             <label>Role / Company<input name="role" placeholder="Founder, Business Owner"></label>
@@ -31,7 +32,8 @@
             <p>{{ "★" * review.rating }} {{ review.message }}</p>
         </div>
         <div class="contact-actions">
-            <form method="post" action="{{ url_for('edit_review', item_id=review.id) }}">
+           <form method="post" action="{{ url_for('edit_review', item_id=review.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <label>Client Name<input name="client" value="{{ review.client }}" required></label>
                 <label>Role / Company<input name="role" value="{{ review.role }}"></label>
                 <label>Rating<select name="rating">
@@ -48,7 +50,8 @@
                 <label>Review Message<textarea name="message" required>{{ review.message }}</textarea></label>
                 <button type="submit">Save</button>
             </form>
-            <form method="post" action="{{ url_for('delete_review', item_id=review.id) }}">
+           <form method="post" action="{{ url_for('delete_review', item_id=review.id) }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <button class="danger" type="submit">Delete</button>
             </form>
         </div>
