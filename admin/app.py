@@ -675,10 +675,9 @@ def admin_services():
         return redirect(url_for("admin_services"))
 
     return render_template(
-        "admin/services.html",
+        "services.html",
         services=repository.list_services()
     )
-
 @app.route("/admin/services/<item_id>/delete", methods=["POST"])
 @login_required
 def delete_admin_service(item_id: str):
