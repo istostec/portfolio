@@ -17,7 +17,7 @@ from services import repository
 
 
 BASE_DIR = Path(__file__).resolve().parent
-SITE_DIR = BASE_DIR.parent
+SITE_DIR = BASE_DIR
 UPLOAD_DIR = BASE_DIR / "static" / "uploads"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "webp", "gif"}
 
